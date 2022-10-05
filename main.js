@@ -13,21 +13,21 @@ let statusArray = [];
 
 while(action !== 3){
     if(action === 1){
-    console.log("~ Creating a new to-do item ~");
-    console.log(" What is this to-do item called?");
+        console.log("~ Creating a new to-do item ~");
+        console.log(" What is this to-do item called?");
     
-    let addItem = prompt("> ");
-        while(addItem.length === 0){
-            console.log("Invalid: Input cannot be empty. Try again.")
-            addItem = prompt("> ")
-        }
+        let addItem = prompt("> ");
+            while(addItem.length === 0){
+                console.log("Invalid: Input cannot be empty. Try again.")
+                addItem = prompt("> ")
+            }
     
-    toDoList.push(addItem);
-    statusArray.push(false);
+        toDoList.push(addItem);
+        statusArray.push(false);
     
-    displayList();
+        displayList();
     
-    selectOption();
+        selectOption();
 
     } else if(action === 2){
         if (toDoList.length !== 0){
@@ -45,7 +45,7 @@ while(action !== 3){
                     newStatus = Number(prompt("> "))
                 }
     
-        statusArray[newStatus -1] = true;
+            statusArray[newStatus -1] = true;
         } else {
             console.log("Please add sometjing to your to-do list before trying to complete an item.")
         }
@@ -54,13 +54,14 @@ while(action !== 3){
     selectOption();
 
     }  else {
-    console.log("Invalid operation")
+        console.log("Invalid operation")
     
-    displayList();
+        displayList();
     
-    selectOption();
+        selectOption();
     }
 }
+
 console.log("~ Exiting To-Do List Application ~")
 
 function selectOption(){
@@ -82,10 +83,10 @@ function displayList(){
     for(let i = 0; i < toDoList.length; i++){
         let status = "";
 
-       if(statusArray[i] === false){
-        status = "[incomplete]";
-       } else if (statusArray[i] === true){
-        status = "[complete]"
+        if(statusArray[i] === false){
+            status = "[incomplete]";
+        } else if (statusArray[i] === true){
+            status = "[complete]"
        }
         
        console.log(`${i+1}. ${status} ${toDoList[i]}`)
